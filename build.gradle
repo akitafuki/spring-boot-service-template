@@ -12,17 +12,21 @@ version = '0.0.1-SNAPSHOT'
 repositories {
     mavenCentral()
     maven {
-        url "https://oss.jfrog.org/artifactory/libs-release"
+        url = "https://oss.jfrog.org/artifactory/libs-release"
     }
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test-classic'
+    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-security-test'
 }
 
 wrapper {
-    version '8.5'
+    version = '8.5'
 }
 
 test {
